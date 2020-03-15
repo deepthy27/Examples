@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="test.css">
+</head>
+<body>
+    <div class="divi"><h3 style="float: left">Serial Number</h3>
+        <h3 class="h3right">Action</h3></div>
+<table id="myTable">
+  <tr>
+    <td></td>
+    <td><button onclick="deleteFunction(this)">Delete</button></td>
+  </tr>
+</table>
+<br>
+
+<button type="button" onclick="myFunction(this)">Add</button>
+
+<script>
+function myFunction() {
+  var table = document.getElementById("myTable");
+  var rows = table.getElementsByTagName("tr")
+  var row = table.insertRow(rows.length);
+  var cell1 = row.insertCell(0);
+  var cell2 = row.insertCell(1);
+  cell2.innerHTML = "<button onclick='deleteFunction(this)'>Delete</button>";
+}
+function deleteFunction(r) {
+    var i = r.parentNode.parentNode.rowIndex;
+  document.getElementById("myTable").deleteRow(i);
+}
+</script>
+
+</body>
+</html>
